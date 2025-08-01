@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only">
+  <info>
+    <title>National Library of Medicine (NLM) - Modified for HIR Journal</title>
+    <id>http://www.zotero.org/styles/national-library-of-medicine</id>
+    <updated>2023-10-10T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <!-- تنسيق يتوافق مع HIR -->
+  <citation>
+    <layout delimiter=",">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]."/>
+      <group delimiter=". ">
+        <names variable="author">
+          <name delimiter=", " and=", " delimiter-precedes-last="always"/>
+          <label form="short" prefix=" (" suffix=")"/>
+          <substitute>
+            <names variable="editor"/>
+            <names variable="translator"/>
+          </substitute>
+        </names>
+        <text variable="title"/>
+      </group>
+      <group delimiter=". " prefix=". ">
+        <text variable="container-title" font-style="italic"/>
+        <text variable="volume"/>
+        <text variable="issue" prefix="(" suffix=")"/>
+        <text variable="page"/>
+      </group>
+      <text variable="year" prefix=" "/>
+      <text variable="DOI" prefix=" https://doi.org/"/>
+    </layout>
+  </bibliography>
+</style>
