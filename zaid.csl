@@ -3,7 +3,7 @@
   <info>
     <title>HIR Journal Perfect Style</title>
     <id>http://www.zotero.org/styles/hir-journal-perfect</id>
-    <updated>2024-07-05T00:00:00+00:00</updated>
+    <updated>2025-08-01T00:00:00+00:00</updated>
   </info>
 
   <citation>
@@ -12,33 +12,35 @@
     </layout>
   </citation>
 
-  <bibliography>
+  <bibliography et-al-min="7" et-al-use-first="6">
     <layout>
       <!-- رقم المصدر -->
       <text variable="citation-number" suffix="."/>
 
-      <!-- المؤلفون (6 كحد أقصى + et-al) -->
+      <!-- المؤلفون (6 كحد أقصى + et al) -->
       <names variable="author">
-        <name name-as-sort-order="first" initialize-with="." delimiter=", " and="text" delimiter-precedes-last="never"/>
-        <et-al term="et-al" font-style="italic"/>
+        <name name-as-sort-order="first" initialize-with="." delimiter=", " delimiter-precedes-last="never"/>
+        <et-al font-style="italic"/>
       </names>
 
       <!-- العنوان -->
-      <text variable="title" prefix=" "/>
+      <text variable="title" text-case="sentence" prefix=". " suffix="."/>
 
       <!-- معلومات المجلة -->
-      <group delimiter="">
+      <group delimiter=" " prefix=". ">
         <text variable="container-title" font-style="italic" form="short"/>
         <text variable="volume"/>
-        <text variable="issue" prefix="(" suffix=") :"/>
-        <text variable="page" suffix=""/>
+        <text variable="issue" prefix="(" suffix=")"/>
+        <text variable="page" prefix=":"/>
       </group>
 
       <!-- السنة -->
-      <date variable="issued" form="numeric" date-parts="year"/>
+      <date variable="issued" prefix=". ">
+        <date-part name="year"/>
+      </date>
 
       <!-- DOI -->
-      <text variable="DOI" prefix=" https://doi.org/"/>
+      <text variable="DOI" prefix=". https://doi.org/"/>
     </layout>
   </bibliography>
 </style>
