@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
   <info>
-    <title>HIR Journal Style (Exact NLM Format)</title>
+    <title>HIR Journal Exact Style</title>
     <id>http://www.zotero.org/styles/hir-journal-exact</id>
-    <updated>2024-06-30T00:00:00+00:00</updated>
+    <updated>2024-07-01T00:00:00+00:00</updated>
   </info>
 
   <citation>
@@ -14,101 +14,31 @@
 
   <bibliography>
     <layout>
-      <!-- مقالات المجلات -->
-      <choose>
-        <if type="article-journal">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author">
-            <name name-as-sort-order="first" delimiter=", " and="text" delimiter-precedes-last="always"/>
-            <et-al term="et-al" font-style="italic"/>
-          </names>
-          <text variable="title" suffix="."/>
-          <group delimiter=" ">
-            <text variable="container-title" font-style="italic" form="short"/>
-            <date variable="issued" form="numeric" date-parts="year" suffix=";"/>
-            <text variable="volume"/>
-            <text variable="issue" prefix="(" suffix=")"/>
-            <text variable="page" prefix=":"/>
-          </group>
-          <text variable="DOI" prefix=" https://doi.org/"/>
-        </if>
+      <!-- رقم المرجع -->
+      <text variable="citation-number" prefix="[" suffix="]."/>
 
-        <!-- وقائع المؤتمرات -->
-        <else-if type="paper-conference">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author"/>
-          <text variable="title" suffix="."/>
-          <group prefix="In: " delimiter=". ">
-            <names variable="editor" suffix=", "/>
-            <text variable="container-title"/>
-          </group>
-          <group suffix=".">
-            <date variable="issued" form="text"/>
-            <text variable="event-place" prefix="; "/>
-          </group>
-          <text variable="page" prefix="p. "/>
-        </else-if>
+      <!-- المؤلفون -->
+      <names variable="author">
+        <name name-as-sort-order="first" delimiter=", " and="text" delimiter-precedes-last="never"/>
+        <et-al term="et-al" font-style="italic"/>
+      </names>
 
-        <!-- الكتب -->
-        <else-if type="book">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author"/>
-          <text variable="title" suffix="."/>
-          <group delimiter=": " suffix=".">
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-          </group>
-          <date variable="issued" prefix=" " form="numeric" date-parts="year"/>
-        </else-if>
+      <!-- العنوان -->
+      <text variable="title"/>
 
-        <!-- فصول الكتب -->
-        <else-if type="chapter">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author"/>
-          <text variable="title" suffix="."/>
-          <group prefix="In: " delimiter=". ">
-            <names variable="editor" suffix=", "/>
-            <text variable="container-title"/>
-          </group>
-          <group delimiter=": " suffix=".">
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-          </group>
-          <date variable="issued" prefix=" " form="numeric" date-parts="year"/>
-          <text variable="page" prefix="p. "/>
-          <text variable="DOI" prefix=" https://doi.org/"/>
-        </else-if>
+      <!-- معلومات المجلة -->
+      <group delimiter=" ">
+        <text variable="container-title" font-style="italic" form="short"/>
+        <text variable="volume"/>
+        <text variable="issue" prefix="(" suffix=") :"/>
+        <text variable="page"/>
+      </group>
 
-        <!-- المواقع الإلكترونية -->
-        <else-if type="webpage">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author"/>
-          <text variable="title" suffix=" [" text-case="capitalize-first"/>
-          <text term="internet" suffix="]."/>
-          <group delimiter=": " suffix=".">
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-          </group>
-          <group suffix=".">
-            <date variable="issued" prefix="c" form="text" date-parts="year"/>
-            <date variable="accessed" prefix="; cited at " form="text"/>
-          </group>
-          <text variable="URL" prefix="Available from: "/>
-        </else-if>
+      <!-- السنة -->
+      <date variable="issued" form="numeric" date-parts="year"/>
 
-        <!-- الأطروحات -->
-        <else-if type="thesis">
-          <text variable="citation-number" prefix="[" suffix="]."/>
-          <names variable="author"/>
-          <text variable="title" suffix=" ["/>
-          <text term="thesis" form="short" suffix="]."/>
-          <group delimiter=": " suffix=".">
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-          </group>
-          <date variable="issued" prefix=" " form="numeric" date-parts="year"/>
-        </else-if>
-      </choose>
+      <!-- DOI -->
+      <text variable="DOI" prefix=" https://doi.org/"/>
     </layout>
   </bibliography>
 </style>
