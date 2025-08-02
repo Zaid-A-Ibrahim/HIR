@@ -26,7 +26,7 @@
         <text variable="issue" prefix="(" suffix=")"/>
         <text variable="page"/>
       </group>
-      <text variable="issued" prefix=" "/>
+      <date variable="issued" prefix=" " form="numeric" date-parts="year"/>
       <text variable="DOI" prefix=" https://doi.org/"/>
     </layout>
   </bibliography>
