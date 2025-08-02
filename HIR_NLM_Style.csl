@@ -3,7 +3,7 @@
   <info>
     <title>HIR Journal NLM Style</title>
     <id>http://www.zotero.org/styles/hir-nlm</id>
-    <updated>2023-10-10</updated>
+    <updated>2023-10-10T00:00:00+00:00</updated>
   </info>
   <citation>
     <layout delimiter=",">
@@ -15,8 +15,8 @@
       <text variable="citation-number" prefix="[" suffix="]."/>
       <group delimiter=". ">
         <names variable="author">
-          <name delimiter=", " and=", " delimiter-precedes-last="always"/>
-          <et-al usage="after-six-authors"/>
+          <name delimiter=", " and="text" delimiter-precedes-last="always"/>
+          <et-al/>
         </names>
         <text variable="title"/>
       </group>
@@ -26,7 +26,7 @@
         <text variable="issue" prefix="(" suffix=")"/>
         <text variable="page"/>
       </group>
-      <text variable="year" prefix=" "/>
+      <text variable="issued" prefix=" "/>
       <text variable="DOI" prefix=" https://doi.org/"/>
     </layout>
   </bibliography>
